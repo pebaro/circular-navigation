@@ -1,0 +1,279 @@
+* {
+	font-size: 62.5%;
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--black: #222;
+	--white: #fff;
+	--green: #a3fc15;
+	--blue: #15e5fc;
+}
+body {
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	background: var(--black);
+}
+#menu-1 {
+	position: absolute;
+	top: 10rem;
+}
+.menu__1 {
+	position: relative;
+	width: 30rem;
+	height: 30rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.menu__1--title {
+	position: relative;
+	left: -25rem;
+	color: var(--blue);
+	font-size: 2.5rem;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+.menu__1 .toggle--1 {
+	position: absolute;
+	width: 7.5rem;
+	height: 7.5rem;
+	background: var(--white);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--black);
+	font-size: 8rem;
+	cursor: pointer;
+	transition: 0.6s;
+}
+.menu__1 .toggle--1.active {
+	transform: rotate(315deg);
+	box-shadow: 0 0 0 6.8rem var(--white);
+	background: var(--black);
+	color: var(--blue);
+}
+
+.menu__1 .menu__1--item {
+	position: absolute;
+	list-style: none;
+	left: 0;
+	transform: rotate(calc(360deg / 8 * var(--i)))
+	translateX(4rem);
+	transform-origin: 15rem;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.6s;
+	z-index: 10;
+}
+.menu__1 .menu__1--item a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 5.5rem;
+	height: 5.5rem;
+	font-size: 4.5rem;
+	color: var(--black);
+	transform: rotate(calc(360deg / -8 * var(--i)));
+	border-radius: 50%;
+}
+.menu__1.active .menu__1--item {
+	visibility: visible;
+	opacity: 1;
+}
+.menu__1.active .menu__1--item.active {
+	transform: rotate(calc(360deg / 8 * var(--i)))
+	translateX(2rem);
+}
+.indicator--1 {
+	position: absolute;
+	left: calc(50% + .25rem);
+	transform-origin: right;
+	width: 10rem;
+	height: 1px;
+	background: transparent;
+	pointer-events: none;
+	transition: all 0.6s;
+}
+.indicator--1::before {
+	content: '';
+	position: absolute;
+	top: -2.7rem;
+	left: 7.8rem;
+	width: 5.5rem;
+	height: 5.5rem;
+	background: var(--black);
+	box-shadow: 0 0 0 0.6rem var(--green);
+	border-radius: 50%;
+	transition: all 0.6s;
+	opacity: 0;
+}
+.menu__1.active .indicator--1::before {
+	opacity: 1;
+	transition: all 0.6s;
+	top: -2.7rem;
+	left: -2.9rem;
+	background: var(--green);
+	box-shadow: 0 0 0 .6rem var(--black);
+}
+.menu__1 .menu__1--item:nth-child(2).active ~ .indicator--1 {
+	transform: translateX(-10.3rem) rotate(0deg);
+}
+.menu__1 .menu__1--item:nth-child(3).active ~ .indicator--1 {
+	transform: translateX(-10.3rem) rotate(45deg);
+}
+.menu__1 .menu__1--item:nth-child(4).active ~ .indicator--1 {
+	transform: translateX(-10.3rem) rotate(90deg);
+}
+.menu__1 .menu__1--item:nth-child(5).active ~ .indicator--1 {
+	transform: translateX(-10.3rem) rotate(135deg);
+}
+.menu__1 .menu__1--item:nth-child(6).active ~ .indicator--1 {
+	transform: translateX(-10.3rem) rotate(180deg);
+}
+.menu__1 .menu__1--item:nth-child(7).active ~ .indicator--1 {
+	transform: translateX(-10.3rem) rotate(225deg);
+}
+.menu__1 .menu__1--item:nth-child(8).active ~ .indicator--1 {
+	transform: translateX(-10.3rem) rotate(270deg);
+}
+.menu__1 .menu__1--item:nth-child(9).active ~ .indicator--1 {
+	transform: translateX(-10.3rem) rotate(315deg);
+}
+
+
+
+
+
+
+#menu-2 {
+	position: absolute;
+	top: 45rem;
+}
+.menu__2 {
+	position: relative;
+	width: 60rem;
+	height: 60rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.menu__2--title {
+	position: relative;
+	left: -48rem;
+	color: var(--blue);
+	font-size: 5rem;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+.menu__2 .toggle--2 {
+	position: absolute;
+	width: 15rem;
+	height: 15rem;
+	background: var(--white);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--black);
+	font-size: 16rem;
+	cursor: pointer;
+	transition: 0.6s;
+}
+.menu__2 .toggle--2.active {
+	transform: rotate(315deg);
+	box-shadow: 0 0 0 13.6rem var(--white);
+	background: var(--black);
+	color: var(--blue);
+}
+
+.menu__2 .menu__2--item {
+	position: absolute;
+	list-style: none;
+	left: -1px;
+	transform: rotate(calc(360deg / 8 * var(--i)))
+	translateX(8rem);
+	transform-origin: 30rem;
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.6s;
+	z-index: 10;
+}
+.menu__2 .menu__2--item a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 11rem;
+	height: 11rem;
+	font-size: 9rem;
+	color: var(--black);
+	transform: rotate(calc(360deg / -8 * var(--i)));
+	border-radius: 50%;
+}
+.menu__2.active .menu__2--item {
+	visibility: visible;
+	opacity: 1;
+}
+.menu__2.active .menu__2--item.active {
+	transform: rotate(calc(360deg / 8 * var(--i)))
+	translateX(4rem);
+}
+.indicator--2 {
+	position: absolute;
+	left: calc(50% + .5rem);
+	transform-origin: right;
+	width: 20rem;
+	height:2px;
+	background: transparent;
+	pointer-events: none;
+	transition: all 0.6s;
+}
+.indicator--2::before {
+	content: '';
+	position: absolute;
+	top: -5.4rem;
+	left: 15.6rem;
+	width: 11rem;
+	height: 11rem;
+	background: var(--black);
+	box-shadow: 0 0 0 1.2rem var(--green);
+	border-radius: 50%;
+	transition: all 0.6s;
+	opacity: 0;
+}
+.menu__2.active .indicator--2::before {
+	opacity: 1;
+	transition: all 0.6s;
+	top: -5.4rem;
+	left: -5.8rem;
+	background: var(--green);
+	box-shadow: 0 0 0 1.2rem var(--black);
+}
+.menu__2 .menu__2--item:nth-child(2).active ~ .indicator--2 {
+	transform: translateX(-20.6rem) rotate(0deg);
+}
+.menu__2 .menu__2--item:nth-child(3).active ~ .indicator--2 {
+	transform: translateX(-20.6rem) rotate(45deg);
+}
+.menu__2 .menu__2--item:nth-child(4).active ~ .indicator--2 {
+	transform: translateX(-20.6rem) rotate(90deg);
+}
+.menu__2 .menu__2--item:nth-child(5).active ~ .indicator--2 {
+	transform: translateX(-20.6rem) rotate(135deg);
+}
+.menu__2 .menu__2--item:nth-child(6).active ~ .indicator--2 {
+	transform: translateX(-20.6rem) rotate(180deg);
+}
+.menu__2 .menu__2--item:nth-child(7).active ~ .indicator--2 {
+	transform: translateX(-20.6rem) rotate(225deg);
+}
+.menu__2 .menu__2--item:nth-child(8).active ~ .indicator--2 {
+	transform: translateX(-20.6rem) rotate(270deg);
+}
+.menu__2 .menu__2--item:nth-child(9).active ~ .indicator--2 {
+	transform: translateX(-20.6rem) rotate(315deg);
+}
